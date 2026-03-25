@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/80 shadow-[0_8px_32px_rgb(0,0,0,0.04)];
+  }
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-md border border-white/50 shadow-md hover:shadow-[0_20px_40px_rgb(99,102,241,0.08)] hover:-translate-y-1.5 hover:bg-white/90 transition-all duration-500 ease-out;
+  }
+  .glass-input {
+    @apply bg-white/60 border border-slate-200/50 backdrop-blur-md focus:bg-white focus:border-indigo-400 focus:ring-4 focus:ring-indigo-500/10 shadow-sm hover:shadow transition-all;
+  }
+  .glass-badge {
+    @apply bg-white/20 backdrop-blur-md border border-white/30 shadow-[0_4px_12px_rgb(0,0,0,0.1)];
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  @apply bg-[#f8fafc] text-slate-800 overflow-x-hidden;
+  background-image: radial-gradient(circle at top right, rgba(99, 102, 241, 0.03), transparent 40%),
+                    radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.03), transparent 40%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { @apply bg-transparent; }
+::-webkit-scrollbar-thumb { @apply bg-slate-200 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-slate-400; }
+
+/* Modal animation */
+@keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+.animate-slide-up { animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+/* Dashboard Premium Animations */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in-up { opacity: 0; animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+@keyframes float {
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.02); }
+  100% { transform: translateY(0px) scale(1); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-delayed { animation: float 7s ease-in-out infinite 2s; }
+
+/* Staggered load delays (up to 12 cards) */
+.delay-0 { animation-delay: 0ms; }
+.delay-1 { animation-delay: 75ms; }
+.delay-2 { animation-delay: 150ms; }
+.delay-3 { animation-delay: 225ms; }
+.delay-4 { animation-delay: 300ms; }
+.delay-5 { animation-delay: 375ms; }
+.delay-6 { animation-delay: 450ms; }
+.delay-7 { animation-delay: 525ms; }
+.delay-8 { animation-delay: 600ms; }
+.delay-9 { animation-delay: 675ms; }
+.delay-10 { animation-delay: 750ms; }
+.delay-11 { animation-delay: 825ms; }

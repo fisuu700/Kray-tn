@@ -1,0 +1,24 @@
+# Symfony Backend
+/backend/var/
+/backend/vendor/
+/backend/.env
+/backend/.env.local
+/backend/.env.*.local
+/backend/public/uploads/*
+!.gitkeep
+
+# Angular Frontend
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.angular/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+Thumbs.db
