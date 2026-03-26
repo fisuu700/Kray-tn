@@ -28,6 +28,9 @@ COPY . /var/www/html
 # Set permissions for Symfony cache and logs
 RUN mkdir -p var/cache var/log && chown -R www-data:www-data var public
 
+# Create a fallback .env if not tracked in Git to prevent Dotenv crashes
+RUN touch .env
+
 # Install composer dependencies (optimized for production)
 RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader
 
