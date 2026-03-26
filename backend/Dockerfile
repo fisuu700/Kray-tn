@@ -39,6 +39,11 @@ ENV DATABASE_URL="postgresql://dummy:dummy@127.0.0.1:5432/dummy?serverVersion=16
 # Install composer without scripts to completely bypass missing Env vars during Docker build
 RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader --no-scripts
 
+# Fix permissions AFTER composer (it may recreate var/) so www-data can write cache at runtime
+RUN mkdir -p var/cache/prod var/log \
+    && chown -R www-data:www-data var \
+    && chmod -R 775 var
+
 # Expose port (Render uses dynamic PORT env var, but defaults to 80/10000; Apache listens on 80)
 EXPOSE 80
 
