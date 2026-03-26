@@ -33,6 +33,8 @@ RUN touch .env
 
 # Set environment to production during build to bypass Dev bundles
 ENV APP_ENV=prod
+# Provide a dummy DATABASE_URL so Symfony's cache builder doesn't crash at compile-time
+ENV DATABASE_URL="postgresql://dummy:dummy@127.0.0.1:5432/dummy?serverVersion=16&charset=utf8"
 
 # Install composer dependencies (optimized for production)
 RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader
