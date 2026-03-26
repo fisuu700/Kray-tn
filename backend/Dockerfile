@@ -36,8 +36,8 @@ ENV APP_ENV=prod
 # Provide a dummy DATABASE_URL so Symfony's cache builder doesn't crash at compile-time
 ENV DATABASE_URL="postgresql://dummy:dummy@127.0.0.1:5432/dummy?serverVersion=16&charset=utf8"
 
-# Install composer dependencies (optimized for production)
-RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader
+# Install composer without scripts to completely bypass missing Env vars during Docker build
+RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader --no-scripts
 
 # Expose port (Render uses dynamic PORT env var, but defaults to 80/10000; Apache listens on 80)
 EXPOSE 80
