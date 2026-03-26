@@ -8,6 +8,8 @@ services:
     envVars:
       - key: APP_ENV
         value: prod
+      - key: DEFAULT_URI
+        value: "https://kerya-api.onrender.com"
       - key: CORS_ALLOW_ORIGIN
         value: "^https?://.*"
       - key: DATABASE_URL
