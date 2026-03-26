@@ -31,6 +31,9 @@ RUN mkdir -p var/cache var/log && chown -R www-data:www-data var public
 # Create a fallback .env if not tracked in Git to prevent Dotenv crashes
 RUN touch .env
 
+# Set environment to production during build to bypass Dev bundles
+ENV APP_ENV=prod
+
 # Install composer dependencies (optimized for production)
 RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader
 
