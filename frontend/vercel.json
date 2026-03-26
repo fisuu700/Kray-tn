@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "framework": "angular",
+  "routes": [
+    {
+      "src": "/(.*)\\.(.*)",
+      "dest": "/$1.$2"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: kerya-api
+    env: docker
+    rootDir: backend
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: APP_ENV
+        value: prod
+      - key: CORS_ALLOW_ORIGIN
+        value: "^https?://.*"
+      - key: DATABASE_URL
+        sync: false # You will manually input the Neon Postgres URL in the Render Dashboard

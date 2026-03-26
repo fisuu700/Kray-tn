@@ -1,4 +1,5 @@
 import { Injectable, signal, computed, inject } from '@angular/core';
+import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { tap } from 'rxjs/operators';
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
     private http = inject(HttpClient);
-    private apiUrl = 'http://127.0.0.1:8000/api/auth';
+    private apiUrl = environment.apiUrl + '/api/auth';
     
     private currentUserSignal = signal<User | null>(null);
 
@@ -23,8 +24,17 @@ export class AuthService {
         }
     }
 
-    loginWithSocial(provider: 'facebook' | 'google', email: string, fullName: string, avatar: string): Observable<{ user: User }> {
-        return this.http.post<{ user: User }>(`${this.apiUrl}/login`, { provider, email, fullName, avatar }).pipe(
+    login(fullName: string, password: string): Observable<{ user: User }> {
+        return this.http.post<{ user: User }>(`${this.apiUrl}/login`, { fullName, password }).pipe(
+            tap(res => {
+                this.currentUserSignal.set(res.user);
+                localStorage.setItem('kray_user', JSON.stringify(res.user));
+            })
+        );
+    }
+
+    register(fullName: string, password: string): Observable<{ user: User }> {
+        return this.http.post<{ user: User }>(`${this.apiUrl}/register`, { fullName, password }).pipe(
             tap(res => {
                 this.currentUserSignal.set(res.user);
                 localStorage.setItem('kray_user', JSON.stringify(res.user));

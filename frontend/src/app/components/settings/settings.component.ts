@@ -1,4 +1,5 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
+import { environment } from '../../../environments/environment';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
@@ -169,7 +170,7 @@ export class SettingsComponent implements OnInit {
         const userId = this.authService.getUserId();
         const headers = new HttpHeaders(userId ? { 'X-User-Id': userId.toString() } : {});
 
-        this.http.post<{ user: any }>('http://127.0.0.1:8000/api/user/profile', formData, { headers }).subscribe({
+        this.http.post<{ user: any }>(`${environment.apiUrl}/api/user/profile`, formData, { headers }).subscribe({
             next: (res) => {
                 // Update localStorage and signal
                 localStorage.setItem('kray_user', JSON.stringify(res.user));

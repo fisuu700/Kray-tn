@@ -6,32 +6,32 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/70 backdrop-blur-xl border border-white/80 shadow-[0_8px_32px_rgb(0,0,0,0.04)];
+    @apply bg-[#130E2A]/70 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)];
   }
   .glass-card {
-    @apply bg-white/60 backdrop-blur-md border border-white/50 shadow-md hover:shadow-[0_20px_40px_rgb(99,102,241,0.08)] hover:-translate-y-1.5 hover:bg-white/90 transition-all duration-500 ease-out;
+    @apply bg-[#130E2A]/60 backdrop-blur-md border border-white/10 shadow-md hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)] hover:-translate-y-1.5 hover:bg-[#130E2A]/80 transition-all duration-500 ease-out;
   }
   .glass-input {
-    @apply bg-white/60 border border-slate-200/50 backdrop-blur-md focus:bg-white focus:border-indigo-400 focus:ring-4 focus:ring-indigo-500/10 shadow-sm hover:shadow transition-all;
+    @apply bg-[#0A061E]/80 border border-white/10 backdrop-blur-md focus:bg-[#130E2A] focus:border-cyan-400 focus:ring-1 focus:ring-cyan-500/50 shadow-sm hover:shadow transition-all text-white placeholder-indigo-300/50;
   }
   .glass-badge {
-    @apply bg-white/20 backdrop-blur-md border border-white/30 shadow-[0_4px_12px_rgb(0,0,0,0.1)];
+    @apply bg-black/40 backdrop-blur-md border border-white/10 shadow-[0_4px_12px_rgba(0,0,0,0.5)];
   }
 }
 
 body {
   margin: 0;
   font-family: 'Outfit', sans-serif;
-  @apply bg-[#f8fafc] text-slate-800 overflow-x-hidden;
-  background-image: radial-gradient(circle at top right, rgba(99, 102, 241, 0.03), transparent 40%),
-                    radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.03), transparent 40%);
+  @apply bg-[#0A061E] text-white overflow-x-hidden;
+  background-image: radial-gradient(circle at top right, rgba(6, 182, 212, 0.05), transparent 40%),
+                    radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.05), transparent 40%);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { @apply bg-transparent; }
-::-webkit-scrollbar-thumb { @apply bg-slate-200 rounded-full; }
-::-webkit-scrollbar-thumb:hover { @apply bg-slate-400; }
+::-webkit-scrollbar-thumb { @apply bg-[#1B1445] rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-cyan-500/50; }
 
 /* Modal animation */
 @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }

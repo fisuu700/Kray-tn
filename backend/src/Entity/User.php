@@ -17,7 +17,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 180, unique: true)]
+    #[ORM\Column(length: 180, nullable: true)]
     private ?string $email = null;
 
     #[ORM\Column(type: 'json')]
@@ -26,23 +26,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, unique: true)]
     private ?string $fullName = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $avatar = null;
 
-    #[ORM\Column]
-    private ?bool $isVerified = false;
 
-    #[ORM\Column(length: 20, nullable: true)]
-    private ?string $phone = null;
-
-    #[ORM\Column(length: 6, nullable: true)]
-    private ?string $otpCode = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?\DateTimeImmutable $otpExpiry = null;
 
     #[ORM\OneToMany(mappedBy: 'owner', targetEntity: Post::class, orphanRemoval: true)]
     private Collection $posts;
@@ -56,7 +46,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getEmail(): ?string { return $this->email; }
     public function setEmail(string $email): static { $this->email = $email; return $this; }
 
-    public function getUserIdentifier(): string { return (string) $this->email; }
+    public function getUserIdentifier(): string { return (string) $this->fullName; }
 
     public function getRoles(): array {
         $roles = $this->roles;
@@ -76,17 +66,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getAvatar(): ?string { return $this->avatar; }
     public function setAvatar(?string $avatar): static { $this->avatar = $avatar; return $this; }
 
-    public function getIsVerified(): ?bool { return $this->isVerified; }
-    public function setIsVerified(bool $isVerified): static { $this->isVerified = $isVerified; return $this; }
 
-    public function getPhone(): ?string { return $this->phone; }
-    public function setPhone(?string $phone): static { $this->phone = $phone; return $this; }
-
-    public function getOtpCode(): ?string { return $this->otpCode; }
-    public function setOtpCode(?string $otpCode): static { $this->otpCode = $otpCode; return $this; }
-
-    public function getOtpExpiry(): ?\DateTimeImmutable { return $this->otpExpiry; }
-    public function setOtpExpiry(?\DateTimeImmutable $otpExpiry): static { $this->otpExpiry = $otpExpiry; return $this; }
 
     public function getPosts(): Collection { return $this->posts; }
     public function addPost(Post $post): static {

@@ -1,4 +1,5 @@
 import { Injectable, inject } from '@angular/core';
+import { environment } from '../../environments/environment';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Post, PostCreateDto } from '../models/post.model';
@@ -8,7 +9,7 @@ import { AuthService } from './auth.service';
     providedIn: 'root'
 })
 export class PostService {
-    private apiUrl = 'http://127.0.0.1:8000/api/posts';
+    private apiUrl = environment.apiUrl + '/api/posts';
     private http = inject(HttpClient);
     private authService = inject(AuthService);
 

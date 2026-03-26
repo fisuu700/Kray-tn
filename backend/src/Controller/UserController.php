@@ -51,7 +51,6 @@ class UserController extends AbstractController
                 'fullName' => $user->getFullName(),
                 'email' => $user->getEmail(),
                 'avatar' => $user->getAvatar(),
-                'isVerified' => $user->getIsVerified(),
             ]
         ]);
     }

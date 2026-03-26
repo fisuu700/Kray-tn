@@ -1,4 +1,5 @@
 import { Injectable, inject } from '@angular/core';
+import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
@@ -25,7 +26,7 @@ export interface Conversation {
 
 @Injectable({ providedIn: 'root' })
 export class MessageService {
-    private apiUrl = 'http://127.0.0.1:8000/api/messages';
+    private apiUrl = environment.apiUrl + '/api/messages';
     private http = inject(HttpClient);
     private authService = inject(AuthService);
 
@@ -35,7 +36,7 @@ export class MessageService {
     }
 
     getInbox(): Observable<{ data: Conversation[] }> {
-        return this.http.get<{ data: Conversation[] }>(`http://127.0.0.1:8000/api/messages/conversations`, { headers: this.headers() });
+        return this.http.get<{ data: Conversation[] }>(`${environment.apiUrl}/api/messages/conversations`, { headers: this.headers() });
     }
 
     getConversation(postId: number, ownerId: number): Observable<{ data: Message[] }> {

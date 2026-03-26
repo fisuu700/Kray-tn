@@ -1,0 +1,81 @@
+[33mÔØ»[39m Building...
+[32mÔ£ö[39m Building...
+Application bundle generation failed. [1.436 seconds]
+
+X [ERROR] NG5002: Opening tag "button" not terminated. [plugin angular-compiler]
+
+    src/app/components/dashboard/dashboard.component.ts:96:10:
+      96 Ôöé           <button (click)="setTab('OFFER')"
+         ÔòÁ           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG5002: Unexpected closing tag "button". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/app/components/dashboard/dashboard.component.ts:102:10:
+      102 Ôöé           </button>
+          ÔòÁ           ~~~~~~~~~
+
+
+X [ERROR] NG5002: Opening tag "button" not terminated. [plugin angular-compiler]
+
+    src/app/components/dashboard/dashboard.component.ts:103:10:
+      103 Ôöé           <button (click)="setTab('REQUEST')"
+          ÔòÁ           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG5002: Unexpected closing tag "button". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/app/components/dashboard/dashboard.component.ts:109:10:
+      109 Ôöé           </button>
+          ÔòÁ           ~~~~~~~~~
+
+
+X [ERROR] NG5002: Opening tag "div" not terminated. [plugin angular-compiler]
+
+    src/app/components/dashboard/dashboard.component.ts:234:18:
+      234 Ôöé ...          <div class="max-w-[75%] px-4 py-3 rounded-2xl text-s...
+          ÔòÁ              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/app/components/dashboard/dashboard.component.ts:240:16:
+      240 Ôöé                 </div>
+          ÔòÁ                 ~~~~~~
+
+
+X [ERROR] NG5002: Unexpected closing block. The block may have been closed earlier. If you meant to write the } character, you should use the "&#125;" HTML entity instead. [plugin angular-compiler]
+
+    src/app/components/dashboard/dashboard.component.ts:241:14:
+      241 Ôöé               }
+          ÔòÁ               ^
+
+
+X [ERROR] NG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/app/components/dashboard/dashboard.component.ts:259:10:
+      259 Ôöé           </div>
+          ÔòÁ           ~~~~~~
+
+
+X [ERROR] NG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/app/components/dashboard/dashboard.component.ts:260:8:
+      260 Ôöé         </div>
+          ÔòÁ         ~~~~~~
+
+
+X [ERROR] NG5002: Unexpected closing block. The block may have been closed earlier. If you meant to write the } character, you should use the "&#125;" HTML entity instead. [plugin angular-compiler]
+
+    src/app/components/dashboard/dashboard.component.ts:261:6:
+      261 Ôöé       }
+          ÔòÁ       ^
+
+
+X [ERROR] NG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags [plugin angular-compiler]
+
+    src/app/components/dashboard/dashboard.component.ts:262:4:
+      262 Ôöé     </div>
+          ÔòÁ     ~~~~~~
+
+
