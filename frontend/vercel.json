@@ -1,6 +1,7 @@
 {
   "version": 2,
   "framework": "angular",
+  "outputDirectory": "dist/kerya-frontend/browser",
   "routes": [
     {
       "src": "/(.*)\\.(.*)",
