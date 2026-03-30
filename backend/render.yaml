@@ -1,16 +1,2 @@
-services:
-  - type: web
-    name: kerya-api
-    env: docker
-    rootDir: backend
-    plan: free
-    healthCheckPath: /health
-    envVars:
-      - key: APP_ENV
-        value: prod
-      - key: DEFAULT_URI
-        value: "https://kerya-api.onrender.com"
-      - key: CORS_ALLOW_ORIGIN
-        value: "^https?://.*"
-      - key: DATABASE_URL
-        sync: false # You will manually input the Neon Postgres URL in the Render Dashboard
+# This file has been moved to the root directory as render.yaml
+# Please use the render.yaml at the project root instead
